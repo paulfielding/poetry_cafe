@@ -4,13 +4,13 @@ describe "Static pages" do
 
   describe "Home page" do
 
-    it "should have the h1 'Petry Cafe'" do
+    it "should have the h1 'Poetry Cafe'" do
       visit '/static_pages/home'
-      page.should have_selector('h1', :text => 'Poetry Cafe')
+      page.should have_selector('h1', :text => 'Welcome to Poetry Cafe')
     end
 
     it "should have the title 'Home'" do
-      visit '/static_pages/home'
+      visit '/'
       page.should have_selector('title',
                         :text => "Poetry Cafe | Home")
     end
