@@ -1,5 +1,24 @@
 <% provide(:title, 'Home') %>
 
+<% if signed_in? %>
+ <div class="row">
+   <aside class="span4">
+   	<section>
+   		<%= render 'shared/user_info' %>
+   	</section>
+   	<section>
+   		<%= render 'shared/poem_form' %>
+   	</section>
+    </aside>
+   
+
+   <div class="span8">
+      <h3>Poetry Feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
+<% else %>
+
 <div class="center hero-unit">
     <h1>Welcome to the Poetry Cafe</h1>
 
@@ -9,5 +28,4 @@
 
   <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
 </div>
-  </body>
-</html>
+<% end %>

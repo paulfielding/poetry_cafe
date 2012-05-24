@@ -1,0 +1,11 @@
+<li>
+  <span class="content"><%= poem.content %></span>
+  <span class="timestamp">
+    Published <%= time_ago_in_words(poem.created_at) %> ago.
+  </span>
+  <% if current_user?(poem.user) %>
+    <%= link_to "delete", poem, method:  :delete,
+                                     confirm: "You sure?",
+                                     title:   poem.content %>
+  <% end %>
+</li>
